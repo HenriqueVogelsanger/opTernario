@@ -1,0 +1,26 @@
+
+<meta charset="UTF-8">
+<script>
+    //Problema: Balanço financeiro
+    // Faça um script que peça para o usuário informar as despesas relacionadas com:
+    // - Conta de água
+    // - Conta de energia elétrica
+    // - Conta de telefone
+    // - Supermercado
+    // Também peça para o usuário informar o valor que recebe de remuneração mensal (salário), proveniente da sua atuação profissional.
+    // Verifique se o usuário ganha mais do que recebe e apresente em tela, indicando quanto que sobrou após o pagamento das contas ou quanto que faltou para poder pagar todas as contas previstas.
+
+    //Entrada
+    const agua = parseFloat(prompt("Quanto é a conta de água?").trim().replace(",", "."));
+    const luz = parseFloat(prompt("Quanto é a conta de luz elétrica?").trim().replace(",", "."));
+    const telefone = parseFloat(prompt("Quanto é a conta de telefone?").trim().replace(",", "."));
+    const salario = parseFloat(prompt("Quanto você recene por mês?").trim().replace(",", "."));
+
+    //Processamento
+    let mensagemFinal = "Todas as contas resultarão num valor de R$" + (agua + luz + telefone).toFixed(2).replace(".", ",") + " e seu salário é de R$" + `${salario.toFixed(2).replace(".", ",")}` +
+        `${((salario) - (agua + luz + telefone)) > 0 ? ", seu salário será suficiente para pagar todas as contas :), e sobrará R$" + ((salario) - (agua + luz + telefone)).toFixed(2).replace(".", ",") + "." : ""}` +
+        `${((salario) - (agua + luz + telefone)) < 0 ? ", seu salário não será suficiente, faltará R$" + `${((agua + luz + telefone) - (salario)).toFixed(2).replace(".", ",")}` + "." : ""}`
+
+    //Saída
+    alert(`${mensagemFinal}`)    
+</script>
